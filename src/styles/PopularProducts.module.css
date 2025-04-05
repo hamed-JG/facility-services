@@ -1,0 +1,42 @@
+.products {
+  padding: 3rem 1rem;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-text);
+}
+
+/* اسکرول افقی در موبایل */
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1.25rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cardWrapper {
+  scroll-snap-align: start;
+  flex: 0 0 260px;
+}
+
+/* حالت دسکتاپ → گرید مرتب */
+@media (min-width: 768px) {
+  .grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+  }
+
+  .cardWrapper {
+    flex: 0 0 300px;
+  }
+}

@@ -1,0 +1,93 @@
+.footer {
+  padding: 4rem 2rem 2rem;
+  background-color: var(--color-primary); 
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  flex: 1 1 250px;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  /* color: #ffffff; */
+}
+
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  /* color: #ffffff; */
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  margin-bottom: 0.5rem;
+}
+
+.links a {
+  /* color: #ffffff; */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #000000; 
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: #000000;
+}
+
+.socials img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* آیکون سفید برای دارک */
+  transition: transform 0.3s ease;
+}
+
+.socials a:hover img {
+  transform: scale(1.2);
+}
+
+.copy {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  /* color: #ccc; */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section {
+    text-align: center;
+  }
+}

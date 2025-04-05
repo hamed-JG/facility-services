@@ -1,0 +1,42 @@
+.productsPage {
+  padding: 2rem 1rem;
+}
+.filtersContainer {
+  background: var(--color-background);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.filterGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.filterGroup input,
+.filterGroup select {
+  flex: 1 1 200px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: "YekanBakh";
+}
+.clearBtn {
+  background: crimson;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.clearBtn:hover {
+  background: darkred;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}

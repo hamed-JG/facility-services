@@ -1,0 +1,92 @@
+
+.testimonials {
+  padding: 4rem 2rem;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--color-text);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1.25rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.grid::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.card {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+  background-color: var(--color-background);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
+  cursor: default;
+}
+
+/* Hover فقط دسکتاپ */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border: 1px solid var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid var(--color-primary);
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+/* Fade animation */
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

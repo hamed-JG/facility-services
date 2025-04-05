@@ -1,0 +1,125 @@
+.reviews {
+  margin-top: 1rem;
+  /* background-color: var(--color-background); */
+  color: var(--color-text);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.title {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-text);
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "YekanBakh";
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  /* color:var(--color-text); */
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid var(--color-primary);
+}
+
+.name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+  color: #f9bc00;
+  font-size: 1.2rem;
+}
+
+.text {
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.actions button :first-child {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.actions button :first-child:hover {
+  color: greenyellow;
+  font-size: 1.5rem;
+}
+
+.toggleBtn {
+  margin: 2rem auto 0;
+  display: block;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: "YekanBakh";
+}
+
+.toggleBtn:hover {
+  background-color: var(--color-hover);
+  color: var(--color-light);
+}
+
+.toggleBtn:active {
+  background-color: var(--color-hover);
+}

@@ -1,0 +1,101 @@
+
+.services {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: var(--transition);
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--color-text);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1.25rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.grid::-webkit-scrollbar {
+  height: 6px;
+}
+.grid::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.card {
+  flex: 0 0 260px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  scroll-snap-align: start;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+}
+
+/* Hover فقط در دسکتاپ */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border: 1px solid var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.icon {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Fade in animation */
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+  }
+
+  .card {
+    flex: 0 0 300px;
+  }
+}

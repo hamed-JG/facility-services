@@ -1,0 +1,14 @@
+.relatedSection {
+  margin: 3rem 0;
+}
+.relatedSection h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}

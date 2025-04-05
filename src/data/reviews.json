@@ -1,0 +1,247 @@
+[
+  {
+    "id": 1,
+    "productId": 1,
+    "name": "جعفر",
+    "comment": "برای بار دوم خریدم، عالیه.",
+    "avatar": "/images/users/user11.jpg"
+  },
+  {
+    "id": 2,
+    "productId": 1,
+    "name": "سمیرا",
+    "comment": "ممنون از تیم حرفه‌ای شما.",
+    "avatar": "/images/users/user8.jpg"
+  },
+  {
+    "id": 3,
+    "productId": 1,
+    "name": "رضا",
+    "comment": "ممنون از تیم حرفه‌ای شما.",
+    "avatar": "/images/users/user9.jpg"
+  },
+  {
+    "id": 4,
+    "productId": 1,
+    "name": "علی",
+    "comment": "پیشنهاد ویژه، عالی بود.",
+    "avatar": "/images/users/user5.jpg"
+  },
+  {
+    "id": 5,
+    "productId": 1,
+    "name": "سمیرا",
+    "comment": "پیشنهاد ویژه، عالی بود.",
+    "avatar": "/images/users/user4.jpg"
+  },
+  {
+    "id": 6,
+    "productId": 1,
+    "name": "زهرا",
+    "comment": "ارسال سریع و پشتیبانی خوب.",
+    "avatar": "/images/users/user7.jpg"
+  },
+  {
+    "id": 7,
+    "productId": 1,
+    "name": "مهدی",
+    "comment": "کیفیت ساخت خیلی بالاست.",
+    "avatar": "/images/users/user5.jpg"
+  },
+  {
+    "id": 8,
+    "productId": 2,
+    "name": "الهام",
+    "comment": "واقعا عالی بود، پیشنهاد می‌کنم!",
+    "avatar": "/images/users/user6.jpg"
+  },
+  {
+    "id": 9,
+    "productId": 2,
+    "name": "محسن",
+    "comment": "ممنون از تیم حرفه‌ای شما.",
+    "avatar": "/images/users/user11.jpg"
+  },
+  {
+    "id": 10,
+    "productId": 2,
+    "name": "الهام",
+    "comment": "محصول دقیقاً همونیه که می‌خواستم.",
+    "avatar": "/images/users/user2.jpg"
+  },
+  {
+    "id": 11,
+    "productId": 2,
+    "name": "مونا",
+    "comment": "ممنون از تیم حرفه‌ای شما.",
+    "avatar": "/images/users/user1.jpg"
+  },
+  {
+    "id": 12,
+    "productId": 2,
+    "name": "زهرا",
+    "comment": "برای بار دوم خریدم، عالیه.",
+    "avatar": "/images/users/user4.jpg"
+  },
+  {
+    "id": 13,
+    "productId": 2,
+    "name": "مونا",
+    "comment": "واقعا عالی بود، پیشنهاد می‌کنم!",
+    "avatar": "/images/users/user3.jpg"
+  },
+  {
+    "id": 14,
+    "productId": 2,
+    "name": "زهرا",
+    "comment": "واقعا عالی بود، پیشنهاد می‌کنم!",
+    "avatar": "/images/users/user2.jpg"
+  },
+  {
+    "id": 15,
+    "productId": 3,
+    "name": "زهرا",
+    "comment": "همه‌چی عالی، بدون مشکل.",
+    "avatar": "/images/users/user3.jpg"
+  },
+  {
+    "id": 16,
+    "productId": 3,
+    "name": "علی",
+    "comment": "ممنون از تیم حرفه‌ای شما.",
+    "avatar": "/images/users/user7.jpg"
+  },
+  {
+    "id": 17,
+    "productId": 3,
+    "name": "الهام",
+    "comment": "نسبت به قیمت خیلی خوبه.",
+    "avatar": "/images/users/user11.jpg"
+  },
+  {
+    "id": 18,
+    "productId": 3,
+    "name": "فاطمه",
+    "comment": "ممنون از تیم حرفه‌ای شما.",
+    "avatar": "/images/users/user10.jpg"
+  },
+  {
+    "id": 19,
+    "productId": 3,
+    "name": "سمیرا",
+    "comment": "همه‌چی عالی، بدون مشکل.",
+    "avatar": "/images/users/user5.jpg"
+  },
+  {
+    "id": 20,
+    "productId": 3,
+    "name": "فاطمه",
+    "comment": "از خرید این محصول خیلی راضی‌ام.",
+    "avatar": "/images/users/user6.jpg"
+  },
+  {
+    "id": 21,
+    "productId": 3,
+    "name": "رضا",
+    "comment": "برای بار دوم خریدم، عالیه.",
+    "avatar": "/images/users/user10.jpg"
+  },
+  {
+    "id": 22,
+    "productId": 4,
+    "name": "علی",
+    "comment": "محصول دقیقاً همونیه که می‌خواستم.",
+    "avatar": "/images/users/user10.jpg"
+  },
+  {
+    "id": 23,
+    "productId": 4,
+    "name": "فاطمه",
+    "comment": "محصول دقیقاً همونیه که می‌خواستم.",
+    "avatar": "/images/users/user10.jpg"
+  },
+  {
+    "id": 24,
+    "productId": 4,
+    "name": "مونا",
+    "comment": "کیفیت ساخت خیلی بالاست.",
+    "avatar": "/images/users/user7.jpg"
+  },
+  {
+    "id": 25,
+    "productId": 4,
+    "name": "محسن",
+    "comment": "برای بار دوم خریدم، عالیه.",
+    "avatar": "/images/users/user2.jpg"
+  },
+  {
+    "id": 26,
+    "productId": 4,
+    "name": "حسین",
+    "comment": "محصول دقیقاً همونیه که می‌خواستم.",
+    "avatar": "/images/users/user12.jpg"
+  },
+  {
+    "id": 27,
+    "productId": 4,
+    "name": "مهدی",
+    "comment": "ممنون از تیم حرفه‌ای شما.",
+    "avatar": "/images/users/user6.jpg"
+  },
+  {
+    "id": 28,
+    "productId": 4,
+    "name": "زهرا",
+    "comment": "واقعا عالی بود، پیشنهاد می‌کنم!",
+    "avatar": "/images/users/user12.jpg"
+  },
+  {
+    "id": 29,
+    "productId": 5,
+    "name": "فاطمه",
+    "comment": "محصول دقیقاً همونیه که می‌خواستم.",
+    "avatar": "/images/users/user11.jpg"
+  },
+  {
+    "id": 30,
+    "productId": 5,
+    "name": "محسن",
+    "comment": "همه‌چی عالی، بدون مشکل.",
+    "avatar": "/images/users/user1.jpg"
+  },
+  {
+    "id": 31,
+    "productId": 5,
+    "name": "نرگس",
+    "comment": "از خرید این محصول خیلی راضی‌ام.",
+    "avatar": "/images/users/user10.jpg"
+  },
+  {
+    "id": 32,
+    "productId": 5,
+    "name": "سمیرا",
+    "comment": "واقعا عالی بود، پیشنهاد می‌کنم!",
+    "avatar": "/images/users/user6.jpg"
+  },
+  {
+    "id": 33,
+    "productId": 5,
+    "name": "الهام",
+    "comment": "از خرید این محصول خیلی راضی‌ام.",
+    "avatar": "/images/users/user6.jpg"
+  },
+  {
+    "id": 34,
+    "productId": 5,
+    "name": "حسین",
+    "comment": "همه‌چی عالی، بدون مشکل.",
+    "avatar": "/images/users/user1.jpg"
+  },
+  {
+    "id": 35,
+    "productId": 5,
+    "name": "فاطمه",
+    "comment": "محصول دقیقاً همونیه که می‌خواستم.",
+    "avatar": "/images/users/user12.jpg"
+  }
+]
