@@ -8,35 +8,38 @@
 
 .title {
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: var(--color-text);
 }
 
-/* اسکرول افقی در موبایل */
+/* اسکرول افقی در تمام حالت‌ها */
 .grid {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 1.25rem;
+  gap: 1.5rem;
   padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+
+  /* مخفی کردن اسکرول‌بار */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
+/* کارت‌ها همیشه یک اندازه مشخص دارن */
 .cardWrapper {
   scroll-snap-align: start;
-  flex: 0 0 260px;
+  flex: 0 0 280px;
+  max-width: 280px;
 }
 
-/* حالت دسکتاپ → گرید مرتب */
-@media (min-width: 768px) {
-  .grid {
-    flex-wrap: wrap;
-    justify-content: center;
-    overflow-x: visible;
-  }
-
+@media screen and (max-width: 640px) {
   .cardWrapper {
-    flex: 0 0 300px;
+    flex: 0 0 180px;
+    max-width: 180px;
   }
 }

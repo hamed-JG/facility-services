@@ -62,7 +62,14 @@ export default function Services() {
             {s.icon}
             <h3>{s.title}</h3>
             <p>{s.description}</p>
-            <a href="#contact" className={styles.cta}>
+            <a
+              href={`https://wa.me/+989194883039?text=${encodeURIComponent(
+                s.title
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.cta}
+            >
               درخواست خدمت
             </a>
           </div>

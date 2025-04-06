@@ -1,6 +1,6 @@
 .footer {
   padding: 4rem 2rem 2rem;
-  background-color: var(--color-primary); 
+  background-color: var(--color-primary);
   color: #000000;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -32,6 +32,7 @@
 .title {
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  font-family: "YekanBakh";
   /* color: #ffffff; */
 }
 
@@ -52,7 +53,7 @@
 }
 
 .links a:hover {
-  color: #000000; 
+  color: #000000;
 }
 
 .socials {
@@ -62,14 +63,15 @@
   color: #000000;
 }
 
-.socials img {
+.socials a > * {
+  color: #000000;
   width: 24px;
   height: 24px;
-  filter: brightness(0) invert(1); /* آیکون سفید برای دارک */
-  transition: transform 0.3s ease;
+  /* filter: brightness(0) invert(1); آیکون سفید برای دارک */
+  transition: transform 0.5s ease;
 }
 
-.socials a:hover img {
+.socials a:hover {
   transform: scale(1.2);
 }
 

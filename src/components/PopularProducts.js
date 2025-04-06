@@ -2,7 +2,7 @@ import ProductCard from "./ProductCard";
 import styles from "../styles/PopularProducts.module.css";
 
 export default function PopularProducts({ products }) {
-  const popular = products.slice(0, 4);
+  const popular = products.slice(0, 6);
 
   return (
     <section id="popular" className={styles.products}>

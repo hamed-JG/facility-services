@@ -1,0 +1,141 @@
+/* ساختار اصلی */
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* فرم تماس */
+.formSection {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.formTitle {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.inputField {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.inputField:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.submitButton {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.submitButton:hover {
+  background-color: var(--color-hover);
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* درباره ما */
+.aboutSection {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  line-height: 2;
+  transition: var(--transition);
+}
+
+.aboutTitle {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+/* لینک‌های اجتماعی */
+.socials {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.socialLink:hover {
+  color: var(--color-hover);
+}
+
+/* حالت ریسپانسیو */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .formSection,
+  .aboutSection {
+    padding: 1.5rem 1rem;
+  }
+
+  .inputField {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+
+  .socials {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .socialLink {
+    font-size: 0.95rem;
+  }
+}

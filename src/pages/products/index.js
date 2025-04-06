@@ -29,12 +29,16 @@ export default function ProductsPage({ products }) {
     sort: sort || "",
   });
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [perPage, setPerPage] = useState(12);
+
   useEffect(() => {
     setFilters({
       category: category || "",
       search: search || "",
       sort: sort || "",
     });
+    setCurrentPage(1); // وقتی فیلتر تغییر می‌کنه، برگرد به صفحه اول
   }, [category, search, sort]);
 
   const filteredProducts = products
@@ -51,19 +55,81 @@ export default function ProductsPage({ products }) {
       return 0;
     });
 
+  const totalPages = Math.ceil(filteredProducts.length / perPage);
+  const paginatedProducts = filteredProducts.slice(
+    (currentPage - 1) * perPage,
+    currentPage * perPage
+  );
+
   return (
     <section className={styles.productsPage}>
       <h2 className={styles.title}>لیست محصولات</h2>
+
       <Filters
         initialSearch={filters.search}
         initialCategory={filters.category}
         initialSort={filters.sort}
       />
+
+      <div className={styles.controls}>
+        <label htmlFor="perPageSelect">تعداد در هر صفحه:</label>
+        <select
+          id="perPageSelect"
+          value={perPage}
+          onChange={(e) => {
+            setPerPage(parseInt(e.target.value));
+            setCurrentPage(1); // ریست به صفحه اول
+          }}
+        >
+          <option value={6}>۶</option>
+          <option value={12}>۱۲</option>
+          <option value={18}>۱۸</option>
+          <option value={24}>۲۴</option>
+        </select>
+      </div>
+
       <div className={styles.grid}>
-        {filteredProducts.map((product) => (
+        {paginatedProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+
+      {totalPages > 1 && (
+        <div className={styles.pagination}>
+          <button
+            className={styles.pageButton}
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+          >
+            قبلی
+          </button>
+
+          {[...Array(totalPages)].map((_, index) => {
+            const page = index + 1;
+            return (
+              <button
+                key={page}
+                className={`${styles.pageButton} ${
+                  currentPage === page ? styles.active : ""
+                }`}
+                onClick={() => setCurrentPage(page)}
+              >
+                {page}
+              </button>
+            );
+          })}
+
+          <button
+            className={styles.pageButton}
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+            disabled={currentPage === totalPages}
+          >
+            بعدی
+          </button>
+        </div>
+      )}
     </section>
   );
 }

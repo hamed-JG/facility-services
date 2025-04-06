@@ -57,10 +57,18 @@ function Filters({
           <option value="آبگرمکن">آبگرمکن</option>
         </select>
         <div className={styles.sortButtons}>
-          <button type="button" onClick={() => setSort("asc")}>
+          <button
+            className={styles.doubleBtn}
+            type="button"
+            onClick={() => setSort("asc")}
+          >
             قیمت کم به زیاد
           </button>
-          <button type="button" onClick={() => setSort("desc")}>
+          <button
+            className={styles.doubleBtn}
+            type="button"
+            onClick={() => setSort("desc")}
+          >
             قیمت زیاد به کم
           </button>
         </div>

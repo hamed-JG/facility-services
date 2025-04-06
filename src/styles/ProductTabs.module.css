@@ -86,7 +86,7 @@
 
 @media (max-width: 768px) {
   .tabButtons {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .tabButtons button {

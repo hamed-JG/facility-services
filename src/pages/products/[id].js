@@ -64,7 +64,7 @@ export default function ProductDetails({ product, products, reviews }) {
             <p>سایزها: {product.sizes.join("، ")}</p>
           )}
           <a
-            href={`https://wa.me/?text=سلام، من علاقه‌مند به خرید ${product.name} هستم.`}
+            href={`https://wa.me/+989194883039?text=سلام، من علاقه‌مند به خرید ${product.name} هستم.`}
             target="_blank"
             className={styles.orderBtn}
           >

@@ -81,7 +81,7 @@
 .price {
   font-size: 1rem;
   font-weight: bold;
-  color: var(--color-primary);
+  color: #d96c6c;
 }
 
 .cta {
@@ -97,4 +97,40 @@
 .cta:hover {
   background-color: var(--color-hover);
   color: #fff;
+}
+
+@media screen and (max-width: 640px) {
+  .card {
+    max-width: 180px;
+    min-height: 340px;
+    flex: 0 0 48%;
+    /* margin: 1% 1%; */
+  }
+  .footer {
+    flex-direction: column;
+  }
+
+  .name {
+    font-size: 0.95rem;
+  }
+
+  .specs {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .price {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .cta {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .category {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
 }

@@ -1,4 +1,3 @@
-
 .services {
   padding: 4rem 2rem;
   text-align: center;
@@ -42,9 +41,29 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   transition: var(--transition);
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
   cursor: default;
+}
+
+.cta {
+  background-color: var(--color-primary);
+  color: #000000;
+  border-color: gray;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-family: "YekanBakh";
+}
+
+.cta:hover {
+  background-color: var(--color-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 /* Hover فقط در دسکتاپ */

@@ -1,5 +1,9 @@
-import styles from "../styles/Footer.module.css";
+import Link from "next/link";
 import { useTheme } from "../context/ThemeContext";
+
+import styles from "../styles/Footer.module.css";
+import { FaTelegram, FaSquareInstagram } from "react-icons/fa6";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const Footer = () => {
   const { theme } = useTheme();
@@ -25,37 +29,37 @@ const Footer = () => {
           <h3 className={styles.title}>دسترسی سریع</h3>
           <ul className={styles.links}>
             <li>
-              <a href="#features">چرا ما؟</a>
+              <Link href="#features">چرا ما؟</Link>
             </li>
             <li>
-              <a href="#services">خدمات</a>
+              <Link href="#services">خدمات</Link>
             </li>
             <li>
-              <a href="#products">محصولات</a>
+              <Link href="/products">محصولات</Link>
             </li>
             <li>
-              <a href="#blog">مقالات</a>
+              <Link href="#blog">مقالات</Link>
             </li>
             <li>
-              <a href="#contact">تماس با ما</a>
+              <Link href="/contact">تماس با ما</Link>
             </li>
           </ul>
         </div>
 
         <div className={styles.section}>
           <h3 className={styles.title}>تماس با ما</h3>
-          <p>تلفن: ۰۹۱۲۱۲۳۴۵۶۷</p>
+          <p>تلفن: 09194883039</p>
           <p>ایمیل: info@example.com</p>
           <div className={styles.socials}>
-            <a href="#">
-              <img src="/icons/telegram.svg" alt="تلگرام" />
-            </a>
-            <a href="#">
-              <img src="/icons/instagram.svg" alt="اینستاگرام" />
-            </a>
-            <a href="#">
-              <img src="/icons/whatsapp.svg" alt="واتساپ" />
-            </a>
+            <Link href="#">
+              <FaTelegram />
+            </Link>
+            <Link href="#">
+              <IoLogoWhatsapp />
+            </Link>
+            <Link href="#">
+              <FaSquareInstagram />
+            </Link>
           </div>
         </div>
       </div>

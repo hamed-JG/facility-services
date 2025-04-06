@@ -1,4 +1,5 @@
 import styles from "../styles/Blog.module.css";
+import Link from "next/link";
 
 export default function Blog({ blogs }) {
   if (!Array.isArray(blogs) || blogs.length === 0) return null;
@@ -12,9 +13,9 @@ export default function Blog({ blogs }) {
             <img src={post.image} alt={post.title} className={styles.image} />
             <div className={styles.titleText}>{post.title}</div>
             <p className={styles.excerpt}>{post.excerpt}</p>
-            <a href={post.link} className={styles.cta}>
+            <Link href={post.link} className={styles.cta}>
               ادامه مطلب
-            </a>
+            </Link>
           </div>
         ))}
       </div>

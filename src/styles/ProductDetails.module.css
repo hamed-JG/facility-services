@@ -8,6 +8,7 @@
 .info {
   flex: 1;
   min-width: 300px;
+  padding: 20px;
 }
 
 .price {
@@ -31,4 +32,11 @@
 
 .orderBtn:hover {
   background: var(--color-secondary);
+}
+
+@media screen and (max-width: 640px) {
+  .details {
+    flex-direction: column;
+    align-items: center;
+  }
 }
