@@ -11,19 +11,17 @@
   gap: 2rem;
 }
 
-/* فرم تماس */
 .formSection {
   background-color: var(--color-background);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
 }
 
 .formTitle {
   margin-bottom: 1rem;
-  color: var(--color-primary);
+  color: var(--color-text);
   font-size: 1.5rem;
 }
 
@@ -46,9 +44,10 @@
 }
 
 .submitButton {
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   background-color: var(--color-primary);
-  color: var(--color-light);
+  color: var(--color-text);
+  margin: 10px 0;
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
@@ -62,9 +61,11 @@
 
 .error {
   color: red;
+  display: inline-block;
   font-size: 0.9rem;
   margin-top: -0.5rem;
   margin-bottom: 1rem;
+  margin-right: 5px;
 }
 
 /* درباره ما */
@@ -79,7 +80,7 @@
 
 .aboutTitle {
   margin-bottom: 1rem;
-  color: var(--color-primary);
+  color: var(--color-text);
   font-size: 1.5rem;
 }
 
@@ -95,10 +96,12 @@
 .socialLink {
   display: flex;
   align-items: center;
-  color: var(--color-primary);
+  color: var(--color-text);
   font-weight: bold;
   font-size: 1rem;
-  transition: var(--transition);
+  padding: 5px 10px;
+  border: 1px solid var(--color-primary);
+  border-radius: 12px;
 }
 
 .socialLink:hover {

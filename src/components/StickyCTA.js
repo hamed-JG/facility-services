@@ -14,14 +14,14 @@ export default function StickyCTA() {
     visible && (
       <div className={styles.ctaBox}>
         <a
-          href="https://wa.me/<YOUR_NUMBER>"
+          href="https://wa.me/+989194883039"
           className={styles.ctaButton}
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaWhatsapp size={20} /> پیام در واتساپ
         </a>
-        <a href="tel:+98XXXXXXXXXX" className={styles.ctaButton}>
+        <a href="tel:+989194883039" className={styles.ctaButton}>
           <FaPhone size={20} /> تماس مستقیم
         </a>
       </div>

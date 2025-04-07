@@ -58,7 +58,7 @@ export default function Contact() {
           {errors.service && (
             <span className={styles.error}>{errors.service}</span>
           )}
-
+          <br />
           <button className={styles.submitButton} onClick={handleSubmit}>
             ارسال به واتساپ
           </button>
@@ -68,36 +68,51 @@ export default function Contact() {
               ✅ اطلاعات با موفقیت ارسال شد.
             </p>
           )}
+
+          <div className={styles.socials}>
+            <a
+              className={styles.socialLink}
+              href="https://wa.me/+989194883039"
+              target="_blank"
+            >
+              <FaWhatsapp
+                style={{ marginLeft: "0.5rem", width: "20px", height: "20px" }}
+              />
+              واتساپ
+            </a>
+            <a
+              className={styles.socialLink}
+              href="https://instagram.com/<YOUR_PAGE>"
+              target="_blank"
+            >
+              <FaInstagram
+                style={{ marginLeft: "0.5rem", width: "20px", height: "20px" }}
+              />
+              اینستاگرام
+            </a>
+            <a className={styles.socialLink} href="tel:+989194883039">
+              <FaPhone
+                style={{ marginLeft: "0.5rem", width: "15px", height: "15px" }}
+              />
+              تماس مستقیم
+            </a>
+          </div>
         </div>
 
         <div className={styles.aboutSection}>
           <h2 className={styles.aboutTitle}>درباره ما</h2>
           <p>
-            ما با سال‌ها تجربه در ارائه خدمات تعمیر و نگهداری دستگاه‌های سرمایشی
-            و گرمایشی، آماده‌ایم تا با بهترین کیفیت در کنار شما باشیم. هدف ما
-            ارائه خدمات سریع، با قیمت مناسب و پشتیبانی واقعی است.
+            ما با سال‌ها تجربه‌ی ارزشمند در حوزه‌ی تعمیر و نگهداری سیستم‌های
+            سرمایشی و گرمایشی، به یکی از مجموعه‌های قابل‌اعتماد در این صنعت
+            تبدیل شده‌ایم. تخصص ما در ارائه خدمات فنی برای انواع تجهیزات خانگی و
+            صنعتی نظیر کولرهای آبی، آبگرمکن‌های دیواری، پکیج‌ها و سیستم‌های
+            تهویه مطبوع، باعث شده تا همواره رضایت مشتریان را در اولویت قرار
+            دهیم. ما باور داریم که ارائه‌ی خدمات حرفه‌ای تنها به مهارت فنی محدود
+            نمی‌شود؛ بلکه سرعت پاسخ‌گویی، قیمت‌گذاری منصفانه، برخورد محترمانه و
+            پشتیبانی واقعی، بخش جدایی‌ناپذیر از تجربه‌ی مطلوب مشتری است. به همین
+            دلیل، تیم پشتیبانی ما در تمامی مراحل در کنار شما خواهد بود.
           </p>
         </div>
-      </div>
-
-      <div className={styles.socials}>
-        <a
-          className={styles.socialLink}
-          href="https://wa.me/<YOUR_NUMBER>"
-          target="_blank"
-        >
-          <FaWhatsapp style={{ marginLeft: "0.5rem" }} /> واتساپ
-        </a>
-        <a
-          className={styles.socialLink}
-          href="https://instagram.com/<YOUR_PAGE>"
-          target="_blank"
-        >
-          <FaInstagram style={{ marginLeft: "0.5rem" }} /> اینستاگرام
-        </a>
-        <a className={styles.socialLink} href="tel:+98XXXXXXXXXX">
-          <FaPhone style={{ marginLeft: "0.5rem" }} /> تماس مستقیم
-        </a>
       </div>
     </div>
   );

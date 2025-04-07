@@ -47,30 +47,58 @@
   cursor: default;
 }
 
-.cta {
+.CTAContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cta1 {
   background-color: var(--color-primary);
   color: #000000;
-  border-color: gray;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.5rem;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
   font-family: "YekanBakh";
+  display: flex;
+  align-items: center;
 }
 
-.cta:hover {
+.cta1:hover {
   background-color: var(--color-hover);
   color: #ffffff;
-  transform: translateY(-2px);
+}
+
+.cta2 {
+  width: 42px;
+  height: 42px;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.cta2:hover {
+  background-color: var(--color-hover);
+  color: #ffffff;
+}
+
+.cta2 > * {
+  width: 20px;
+  height: 20px;
 }
 
 /* Hover فقط در دسکتاپ */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     border: 1px solid var(--color-primary);
-    transform: translateY(-4px);
+    /* transform: translateY(-4px); */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   }
 }

@@ -7,6 +7,7 @@ import {
 import { GiWaterDrop, GiToolbox } from "react-icons/gi";
 import { TbAirConditioning } from "react-icons/tb";
 import { FaTools } from "react-icons/fa";
+import { IoIosCall } from "react-icons/io";
 import styles from "../styles/Services.module.css";
 
 const services = [
@@ -62,16 +63,28 @@ export default function Services() {
             {s.icon}
             <h3>{s.title}</h3>
             <p>{s.description}</p>
-            <a
-              href={`https://wa.me/+989194883039?text=${encodeURIComponent(
-                s.title
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.cta}
-            >
-              درخواست خدمت
-            </a>
+            <div className={styles.CTAContainer}>
+              <a
+                href={`https://wa.me/+989194883039?text=${encodeURIComponent(
+                  s.title
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.cta1}
+              >
+                درخواست خدمت
+              </a>
+              <a
+                href={`https://wa.me/+989194883039?text=${encodeURIComponent(
+                  s.title
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.cta2}
+              >
+                <IoIosCall />
+              </a>
+            </div>
           </div>
         ))}
       </div>

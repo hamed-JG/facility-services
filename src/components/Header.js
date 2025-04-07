@@ -2,6 +2,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
+import { FaPhone } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 import styles from "../styles/Header.module.css";
 
@@ -29,21 +32,21 @@ const Header = () => {
             <Link href="/">خانه</Link>
           </li>
           <li>
-            <Link href="#services">خدمات</Link>
+            <Link href="/services">خدمات</Link>
           </li>
           <li>
             <Link href="/products">محصولات</Link>
           </li>
           <li>
-            <Link href="#blog">مقالات</Link>
+            <Link href="/expand">مقالات</Link>
           </li>
           <li>
             <Link href="/contact">تماس با ما</Link>
           </li>
           <div className={styles.cta}>
-            <li>wh</li>
-            <li>inst</li>
-            <li>call</li>
+            <FaPhone className={styles.icon} />
+            <IoLogoWhatsapp className={styles.icon} />
+            <FaSquareInstagram className={styles.icon} />
           </div>
         </ul>
       </nav>

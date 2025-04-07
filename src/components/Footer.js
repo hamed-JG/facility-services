@@ -28,11 +28,11 @@ const Footer = () => {
         <div className={styles.section}>
           <h3 className={styles.title}>دسترسی سریع</h3>
           <ul className={styles.links}>
-            <li>
+            {/* <li>
               <Link href="#features">چرا ما؟</Link>
-            </li>
+            </li> */}
             <li>
-              <Link href="#services">خدمات</Link>
+              <Link href="/services">خدمات</Link>
             </li>
             <li>
               <Link href="/products">محصولات</Link>
@@ -55,7 +55,10 @@ const Footer = () => {
               <FaTelegram />
             </Link>
             <Link href="#">
-              <IoLogoWhatsapp />
+              <IoLogoWhatsapp
+                href="https://wa.me/+989194883039"
+                target="_blank"
+              />
             </Link>
             <Link href="#">
               <FaSquareInstagram />
