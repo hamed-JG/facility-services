@@ -1,21 +1,36 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useTitle } from "../context/TitleContext";
 import styles from "../styles/Breadcrumb.module.css";
 
-const Breadcrumb = ({ currentTitle }) => {
+const pathLabels = {
+  products: "محصولات",
+  services: "خدمات",
+  contact: "تماس با ما",
+  blog: "مقالات",
+  expand: "مطالب آموزشی",
+  about: "درباره ما",
+};
+
+const Breadcrumb = () => {
+  const { pageTitle } = useTitle();
   const router = useRouter();
-  const pathSegments = router.asPath.split("/").filter(Boolean);
+  const pathSegments = router.asPath.split("?")[0].split("/").filter(Boolean);
 
-  let breadcrumbs = [];
+  // اگر در صفحه خانه هستیم یا هیچ مسیر مشخصی نداریم، چیزی نمایش نده
+  if (pathSegments.length === 0) return null;
 
-  if (pathSegments[0] === "product" && currentTitle) {
-    breadcrumbs = [
-      { label: "محصولات", href: "/products" },
-      { label: currentTitle },
-    ];
-  } else if (pathSegments[0] === "products") {
-    breadcrumbs = [{ label: "محصولات", href: "/products" }];
-  }
+  const breadcrumbs = pathSegments.map((segment, index) => {
+    const isLast = index === pathSegments.length - 1;
+    const href = "/" + pathSegments.slice(0, index + 1).join("/");
+
+    const isDynamic = !pathLabels[segment] && isLast && pageTitle;
+
+    return {
+      label: pathLabels[segment] || (isLast && pageTitle ? pageTitle : segment),
+      href: !isLast ? href : null,
+    };
+  });
 
   return (
     <nav className={styles.breadcrumb}>

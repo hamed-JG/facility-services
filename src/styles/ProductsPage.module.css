@@ -1,5 +1,5 @@
 .productsPage {
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
 
 .title {
@@ -79,6 +79,10 @@
   gap: 0.5rem;
   font-size: 0.9rem;
   color: var(--color-text);
+}
+
+.controls label{
+margin: 0 20px
 }
 
 .controls select {

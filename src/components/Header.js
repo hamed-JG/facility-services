@@ -12,6 +12,14 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
+  const navItems = [
+    { label: "خانه", href: "/" },
+    { label: "خدمات", href: "/services" },
+    { label: "محصولات", href: "/products" },
+    { label: "مقالات", href: "/expand" },
+    { label: "تماس با ما", href: "/contact" },
+  ];
+
   return (
     <header className={styles.header}>
       <div className={styles.controls}>
@@ -28,21 +36,16 @@ const Header = () => {
 
       <nav className={`${styles.nav} ${isOpen ? styles.show : ""}`}>
         <ul>
-          <li>
-            <Link href="/">خانه</Link>
-          </li>
-          <li>
-            <Link href="/services">خدمات</Link>
-          </li>
-          <li>
-            <Link href="/products">محصولات</Link>
-          </li>
-          <li>
-            <Link href="/expand">مقالات</Link>
-          </li>
-          <li>
-            <Link href="/contact">تماس با ما</Link>
-          </li>
+          {navItems.map((item, i) => (
+            <Link
+              onClick={() => setIsOpen(false)}
+              key={i}
+              href={item.href}
+              className={styles.navLink}
+            >
+              {item.label}
+            </Link>
+          ))}
           <div className={styles.cta}>
             <FaPhone className={styles.icon} />
             <IoLogoWhatsapp className={styles.icon} />
