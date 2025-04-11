@@ -67,7 +67,7 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 5px;
   gap: 2rem;
 }

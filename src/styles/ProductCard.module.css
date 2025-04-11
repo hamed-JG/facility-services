@@ -1,5 +1,5 @@
 .card {
-  width: 100%;
+  width: 280px;
   max-width: 280px;
   background: var(--color-background);
   color: var(--color-text);
@@ -100,9 +100,9 @@
 
 @media screen and (max-width: 640px) {
   .card {
-    max-width: 170px;
-    min-height: 340px;
-    flex: 0 0 47%;
+    width: 170px;
+    height: 340px;
+    /* flex: 0 0 47%; */
   }
   .footer {
     flex-direction: column;
