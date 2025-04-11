@@ -67,7 +67,8 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding: 5px;
   gap: 2rem;
 }
 
@@ -81,8 +82,8 @@
   color: var(--color-text);
 }
 
-.controls label{
-margin: 0 20px
+.controls label {
+  margin: 0 20px;
 }
 
 .controls select {
@@ -125,6 +126,6 @@ margin: 0 20px
 
 @media screen and (max-width: 640px) {
   .grid {
-    gap: 1rem;
+    gap: 2rem;
   }
 }
