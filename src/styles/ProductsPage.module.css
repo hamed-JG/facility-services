@@ -126,6 +126,7 @@
 
 @media screen and (max-width: 640px) {
   .grid {
-    gap: 2rem;
+    gap: 1rem 0;
+    justify-content: space-evenly;
   }
 }
