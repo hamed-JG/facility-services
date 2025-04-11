@@ -11,6 +11,10 @@
   padding: 20px;
 }
 
+.info ul li{
+  list-style: none;
+}
+
 .price {
   color: var(--color-primary);
   font-weight: bold;

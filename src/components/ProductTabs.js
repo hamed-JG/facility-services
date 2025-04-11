@@ -14,12 +14,12 @@ export default function ProductTabs({ product, reviews }) {
         >
           توضیحات
         </button>
-        <button
+        {/* <button
           className={activeTab === "specs" ? styles.active : ""}
           onClick={() => setActiveTab("specs")}
         >
           مشخصات فنی
-        </button>
+        </button> */}
         <button
           className={activeTab === "reviews" ? styles.active : ""}
           onClick={() => setActiveTab("reviews")}
@@ -33,7 +33,7 @@ export default function ProductTabs({ product, reviews }) {
           <div className={styles.description}>
             <p>{product.description.intro}</p>
             <ul>
-              {product.description.features.map((f, i) => (
+              {product.specs.map((f, i) => (
                 <li key={i}>{f}</li>
               ))}
             </ul>
@@ -42,13 +42,13 @@ export default function ProductTabs({ product, reviews }) {
           </div>
         )}
 
-        {activeTab === "specs" && (
+        {/* {activeTab === "specs" && (
           <ul className={styles.specs}>
             {product.specs.map((s, i) => (
               <li key={i}>✔ {s}</li>
             ))}
           </ul>
-        )}
+        )} */}
 
         {activeTab === "reviews" && (
           <ProductReviews reviews={reviews} productId={product.id} />
