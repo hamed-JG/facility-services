@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
         <span className={styles.category}>{product.category}</span>
         <Link href={"/products/" + product.id}>
           <img
-            src={product.images?.[0]}
+            src={product.image}
             alt={product.name}
             className={styles.image}
           />
