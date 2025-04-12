@@ -20,7 +20,7 @@ export default function ProductDetails({ product, products, reviews }) {
         <title>{product.name}</title>
       </Head>
       <section className={styles.details}>
-        {product.images && <ProductGallery images={product.images} />}
+        {product.image && <ProductGallery images={product.image} />}
         <div className={styles.info}>
           <h1>{product.name}</h1>
           <p className={styles.price}>{product.price.toLocaleString()} تومان</p>

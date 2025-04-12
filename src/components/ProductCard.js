@@ -18,7 +18,7 @@ export default function ProductCard({ product }) {
         <h3 className={styles.name}>{product.name}</h3>
         <ul className={styles.specs}>
           {product.specs?.slice(0, 1).map((spec, index) => (
-            <li key={index}>• {spec}</li>
+            <li key={index}>{spec}</li>
           ))}
         </ul>
         <div className={styles.footer}>
