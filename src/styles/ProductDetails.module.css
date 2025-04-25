@@ -1,46 +1,258 @@
-.details {
+.firstSection {
   display: flex;
   flex-wrap: nowrap;
-  gap: 2rem;
-  padding: 2rem 1rem;
-}
-
-.info {
-  flex: 1;
-  min-width: 300px;
+  gap: 24px;
   padding: 20px;
+  /* background: var(--color-background); */
 }
 
-.info ul li{
-  list-style: none;
+.gallery {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mainImage {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* 4:3 */
+  overflow: hidden;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.mainImage img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.thumb {
+  flex: 0 0 60px;
+  height: 60px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.thumb:hover img {
+  transform: scale(1.1);
+}
+
+.activeThumb {
+  border-color: var(--color-primary);
+}
+
+.summary {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  gap: 50px;
+  color: var(--color-text);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.price,
+.contactText {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0;
 }
 
 .price {
   color: var(--color-primary);
-  font-weight: bold;
-  font-size: 1.3rem;
-  margin: 0.5rem 0;
+  font-size: 1.6rem;
 }
 
-.orderBtn {
-  display: inline-block;
-  margin-top: 1rem;
+.contactText {
+  color: var(--color-primary);
+}
+
+.specsSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.specItem {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.whatsappBtn,
+.callBtn,
+.shareBtn {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  background: var(--color-background);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition);
+  cursor: pointer;
+}
+
+.whatsappBtn:hover {
+  background: #25d366;
+  color: #fff;
+}
+
+.callBtn:hover,
+.shareBtn:hover {
   background: var(--color-primary);
   color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
 }
 
-.orderBtn:hover {
-  background: var(--color-secondary);
+.descriptionSection {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-@media screen and (max-width: 640px) {
-  .details {
+.sectionTitle {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.descriptionBox {
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.descriptionBox p {
+  margin: 8px 0;
+  color: var(--color-text);
+}
+
+.descriptionBox ul {
+  margin: 8px 0;
+  padding-left: 1rem;
+}
+
+.descriptionBox li {
+  margin-bottom: 4px;
+  margin-right: 12px;
+  list-style: circle;
+}
+
+.seoText {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-top: 12px;
+}
+
+.relatedSection {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 20px;
+}
+
+.relatedSection :global(.relatedGrid) {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+
+.relatedSection :global(.relatedGrid) > * {
+  flex: 0 0 auto;
+}
+
+/* Optional: hide scrollbar track */
+.relatedSection :global(.relatedGrid)::-webkit-scrollbar {
+  height: 8px;
+}
+.relatedSection :global(.relatedGrid)::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .firstSection {
     flex-direction: column;
-    align-items: center;
+    padding: 16px;
+    gap: 16px;
+  }
+  .gallery,
+  .summary {
+    flex: 1 1 100%;
+  }
+  .mainImage {
+    height: 400px;
+    padding-top: 56.25%; /* 16:9 */
+  }
+  .thumb {
+    flex: 0 0 50px;
+    height: 50px;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .price,
+  .contactText {
+    font-size: 1.1rem;
+  }
+  .actionButtons {
+    flex-direction: column;
+  }
+  .actionButtons a {
+    padding: 6px;
+    font-size: 0.9rem;
+  }
+  .descriptionSection {
+    padding: 16px;
+  }
+  .sectionTitle {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+  .descriptionBox {
+    padding: 12px;
+  }
+  .seoText {
+    font-size: 0.8rem;
+  }
+  .relatedSection {
+    padding: 16px;
   }
 }

@@ -23,11 +23,20 @@ export default function ProductCard({ product }) {
         </ul>
         <div className={styles.footer}>
           <span className={styles.price}>
-            {product.price?.toLocaleString()} تومان
+            {product.category === "موتور کولر" ? (
+              <span className={styles.call}>تماس بگیرید</span>
+            ) : (
+              <>{product.price?.toLocaleString()} تومان</>
+            )}
           </span>
-          <Link href={"/products/" + product.id} className={styles.cta}>
-            مشاهده محصول
-          </Link>
+          <div className={styles.ctaContainer}>
+            <Link href={"/products/" + product.id} className={styles.cta}>
+              مشخصات
+            </Link>
+            <Link href="tel:+989194883039" className={styles.cta}>
+              تماس
+            </Link>
+          </div>
         </div>
       </div>
     </div>

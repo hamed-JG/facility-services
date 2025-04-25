@@ -8,14 +8,19 @@ export default function RelatedProducts({
 }) {
   const related = products
     .filter((p) => p.category === currentCategory && p.id !== currentId)
-    .slice(0, 4);
+    .slice(0, 8); // می‌تونی تعداد رو تنظیم کنی
 
   return (
     <section className={styles.relatedSection}>
-      <h3>محصولات مشابه</h3>
+      <h3 className={styles.heading}>محصولات مرتبط</h3>
       <div className={styles.productsContainer}>
         {related.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <div
+            key={`${product.id}-${product.name}`}
+            className={styles.cardWrapper}
+          >
+            <ProductCard product={product} />
+          </div>
         ))}
       </div>
     </section>

@@ -1,134 +1,106 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import ProductCard from "../../components/ProductCard";
-import Filters from "../../components/Filters";
-import styles from "../../styles/ProductsPage.module.css";
 import fs from "fs";
 import path from "path";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import ProductCard from "../../components/ProductCard";
+import styles from "../../styles/ProductsPage.module.css";
 
 export async function getStaticProps() {
   const dataDir = path.join(process.cwd(), "src", "data");
   const products = JSON.parse(
     fs.readFileSync(path.join(dataDir, "products.json"), "utf-8")
   );
-
-  return {
-    props: {
-      products,
-    },
-  };
+  return { props: { products } };
 }
 
 export default function ProductsPage({ products }) {
   const router = useRouter();
-  const { category, search, sort } = router.query;
-
-  const [filters, setFilters] = useState({
-    category: category || "",
-    search: search || "",
-    sort: sort || "",
-  });
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const [perPage, setPerPage] = useState(12);
+  const { search, category } = router.query;
+  const [searchValue, setSearchValue] = useState(search || "");
+  const [categoryValue, setCategoryValue] = useState(category || "");
+  const [visibleCount, setVisibleCount] = useState(15);
 
   useEffect(() => {
-    setFilters({
-      category: category || "",
-      search: search || "",
-      sort: sort || "",
-    });
-    setCurrentPage(1); // وقتی فیلتر تغییر می‌کنه، برگرد به صفحه اول
-  }, [category, search, sort]);
+    setSearchValue(search || "");
+    setCategoryValue(category || "");
+    setVisibleCount(15);
+  }, [search, category]);
 
-  const filteredProducts = products
-    .filter((product) => {
-      const matchesCategory =
-        !filters.category || product.category === filters.category;
-      const matchesSearch =
-        !filters.search || product.name.includes(filters.search);
-      return matchesCategory && matchesSearch;
-    })
-    .sort((a, b) => {
-      if (filters.sort === "asc") return a.price - b.price;
-      if (filters.sort === "desc") return b.price - a.price;
-      return 0;
-    });
+  const filteredProducts = products.filter((p) => {
+    const matchesCategory = categoryValue ? p.category === categoryValue : true;
+    const matchesSearch = searchValue
+      ? p.name.toLowerCase().includes(searchValue.toLowerCase())
+      : true;
+    return matchesCategory && matchesSearch;
+  });
 
-  const totalPages = Math.ceil(filteredProducts.length / perPage);
-  const paginatedProducts = filteredProducts.slice(
-    (currentPage - 1) * perPage,
-    currentPage * perPage
-  );
+  const showMore = () =>
+    setVisibleCount((prev) => Math.min(prev + 15, filteredProducts.length));
+
+  const updateQuery = (newSearch, newCategory) => {
+    const query = {};
+    if (newSearch) query.search = newSearch;
+    if (newCategory) query.category = newCategory;
+    router.replace({ pathname: "/products", query });
+  };
+
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchValue(value);
+    updateQuery(value, categoryValue);
+  };
+
+  const handleCategoryChange = (e) => {
+    const value = e.target.value;
+    setCategoryValue(value);
+    updateQuery(searchValue, value);
+  };
+
+  const clearFilters = () => {
+    setSearchValue("");
+    setCategoryValue("");
+    setVisibleCount(15);
+    router.replace("/products");
+  };
 
   return (
-    <section className={styles.productsPage}>
-      <h2 className={styles.title}>لیست محصولات</h2>
+    <section className={styles.container}>
+      <h1 className={styles.heading}>محصولات ما</h1>
 
-      <Filters
-        initialSearch={filters.search}
-        initialCategory={filters.category}
-        initialSort={filters.sort}
-      />
-
-      <div className={styles.controls}>
-        <label htmlFor="perPageSelect">تعداد در هر صفحه:</label>
+      <div className={styles.filters}>
+        <input
+          type="text"
+          placeholder="جستجو..."
+          value={searchValue}
+          onChange={handleSearchChange}
+          className={styles.filterInput}
+        />
         <select
-          id="perPageSelect"
-          value={perPage}
-          onChange={(e) => {
-            setPerPage(parseInt(e.target.value));
-            setCurrentPage(1); // ریست به صفحه اول
-          }}
+          value={categoryValue}
+          onChange={handleCategoryChange}
+          className={styles.filterSelect}
         >
-          <option value={6}>۶</option>
-          <option value={12}>۱۲</option>
-          <option value={18}>۱۸</option>
-          <option value={24}>۲۴</option>
+          <option value="">همه دسته‌ها</option>
+          <option value="آبگرمکن">آبگرمکن</option>
+          <option value="موتور کولر">موتور کولر</option>
+          <option value="هسته سیم پیچی">هسته سیم پیچی</option>
+          <option value="پمپ آب">پمپ آب</option>
         </select>
+        <button onClick={clearFilters} className={styles.clearBtn}>
+          حذف فیلترها
+        </button>
       </div>
 
       <div className={styles.grid}>
-        {paginatedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {filteredProducts.slice(0, visibleCount).map((product, idx) => (
+          <ProductCard key={`${product.id}-${idx}`} product={product} />
         ))}
       </div>
 
-      {totalPages > 1 && (
-        <div className={styles.pagination}>
-          <button
-            className={styles.pageButton}
-            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-            disabled={currentPage === 1}
-          >
-            قبلی
-          </button>
-
-          {[...Array(totalPages)].map((_, index) => {
-            const page = index + 1;
-            return (
-              <button
-                key={page}
-                className={`${styles.pageButton} ${
-                  currentPage === page ? styles.active : ""
-                }`}
-                onClick={() => setCurrentPage(page)}
-              >
-                {page}
-              </button>
-            );
-          })}
-
-          <button
-            className={styles.pageButton}
-            onClick={() =>
-              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-            }
-            disabled={currentPage === totalPages}
-          >
-            بعدی
-          </button>
-        </div>
+      {visibleCount < filteredProducts.length && (
+        <button className={styles.showMoreBtn} onClick={showMore}>
+          مشاهده بیشتر
+        </button>
       )}
     </section>
   );

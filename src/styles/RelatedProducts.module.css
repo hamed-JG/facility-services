@@ -1,14 +1,41 @@
 .relatedSection {
-  margin: 3rem 0;
+  margin: 3rem 1rem;
 }
-.relatedSection h3 {
+
+.heading {
   margin-bottom: 1rem;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  color: var(--color-text);
 }
+
 .productsContainer {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  justify-content: center;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+
+.productsContainer::-webkit-scrollbar {
+  height: 6px;
+}
+.productsContainer::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.cardWrapper {
+  flex: 0 0 auto;
+  width: 200px; /* می‌تونی این عرض رو تغییر بدی */
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+  .productsContainer {
+    gap: 12px;
+  }
+  .cardWrapper {
+    width: 150px;
+  }
 }
