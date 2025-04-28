@@ -16,7 +16,7 @@ const Header = () => {
     { label: "خانه", href: "/" },
     { label: "خدمات", href: "/services" },
     { label: "محصولات", href: "/products" },
-    { label: "مقالات", href: "/expand" },
+    { label: "مقالات", href: "/blog" },
     { label: "تماس با ما", href: "/contact" },
   ];
 
