@@ -2,6 +2,14 @@ import { useState } from "react";
 import styles from "../styles/ContactPage.module.css";
 import { FaWhatsapp, FaInstagram, FaPhone } from "react-icons/fa";
 
+const serviceOptions = [
+  { value: "", label: "-- انتخاب خدمات --" },
+  { value: "تعمیر کولر آبی", label: "تعمیر کولر آبی" },
+  { value: "سرویس پکیج", label: "سرویس پکیج" },
+  { value: "تعمیر آبگرمکن دیواری", label: "تعمیر آبگرمکن دیواری" },
+  { value: "نگهداری سیستم تهویه", label: "نگهداری سیستم تهویه" },
+];
+
 export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", service: "" });
   const [errors, setErrors] = useState({});
@@ -10,8 +18,9 @@ export default function Contact() {
   const validate = () => {
     const errs = {};
     if (!form.name.trim()) errs.name = "نام را وارد کنید";
-    if (!/^\d{11}$/.test(form.phone)) errs.phone = "شماره موبایل معتبر نیست";
-    if (!form.service.trim()) errs.service = "نوع خدمات را وارد کنید";
+    // اعتبارسنجی شماره موبایل ایران (11 رقم، با 09 شروع)
+    if (!/^09\d{9}$/.test(form.phone)) errs.phone = "شماره موبایل معتبر نیست";
+    if (!form.service) errs.service = "نوع خدمات را انتخاب کنید";
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -22,7 +31,7 @@ export default function Contact() {
     const encoded = encodeURIComponent(message);
     setSuccess(true);
     setTimeout(() => setSuccess(false), 5000);
-    window.open(`https://wa.me/<YOUR_NUMBER>?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/+989194883039?text=${encoded}`, "_blank");
   };
 
   return (
@@ -30,6 +39,7 @@ export default function Contact() {
       <div className={styles.grid}>
         <div className={styles.formSection}>
           <h2 className={styles.formTitle}>درخواست تماس</h2>
+
           <input
             type="text"
             className={styles.inputField}
@@ -42,22 +52,31 @@ export default function Contact() {
           <input
             type="text"
             className={styles.inputField}
-            placeholder="شماره همراه"
+            placeholder="شماره همراه (09xxxxxxxxx)"
             value={form.phone}
             onChange={(e) => setForm({ ...form, phone: e.target.value })}
           />
           {errors.phone && <span className={styles.error}>{errors.phone}</span>}
 
-          <input
-            type="text"
+          <select
             className={styles.inputField}
-            placeholder="نوع خدمات درخواستی"
             value={form.service}
             onChange={(e) => setForm({ ...form, service: e.target.value })}
-          />
+          >
+            {serviceOptions.map((opt) => (
+              <option
+                key={opt.value}
+                value={opt.value}
+                disabled={opt.value === ""}
+              >
+                {opt.label}
+              </option>
+            ))}
+          </select>
           {errors.service && (
             <span className={styles.error}>{errors.service}</span>
           )}
+
           <br />
           <button className={styles.submitButton} onClick={handleSubmit}>
             ارسال به واتساپ

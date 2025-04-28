@@ -28,6 +28,7 @@
   margin: 0;
   padding: 0;
   font-family: "YekanBakh", sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,

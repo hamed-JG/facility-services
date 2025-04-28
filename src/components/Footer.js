@@ -15,7 +15,7 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.section}>
           <img
-            src="/images/logo-footer.png"
+            src="/images/logo.png"
             alt="لوگوی سایت"
             className={styles.logo}
           />

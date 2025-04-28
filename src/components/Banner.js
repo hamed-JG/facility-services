@@ -7,6 +7,8 @@ const Banner = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [animate, setAnimate] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -66,6 +68,28 @@ const Banner = () => {
     }, 100);
   };
 
+  // Touch handlers for swipe
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!isMobile) return;
+    const delta = touchStartX - touchEndX;
+    const threshold = 50;
+    if (delta > threshold) {
+      handleSlideChange((currentSlide + 1) % slides.length);
+    } else if (delta < -threshold) {
+      handleSlideChange((currentSlide - 1 + slides.length) % slides.length);
+    }
+    setTouchStartX(0);
+    setTouchEndX(0);
+  };
+
   const currentImage = isMobile
     ? slides[currentSlide].imageMobile
     : slides[currentSlide].imageDesktop;
@@ -76,6 +100,9 @@ const Banner = () => {
         className={styles.slideWrapper}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <div
           className={styles.slide}

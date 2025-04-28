@@ -23,6 +23,7 @@
   margin-bottom: 1rem;
   color: var(--color-text);
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .inputField {
@@ -76,12 +77,15 @@
   padding: 2rem;
   line-height: 2;
   transition: var(--transition);
+  text-align: justify;
+
 }
 
 .aboutTitle {
   margin-bottom: 1rem;
   color: var(--color-text);
   font-size: 1.5rem;
+  text-align: center;
 }
 
 /* لینک‌های اجتماعی */

@@ -13,7 +13,7 @@ export default function Blog({ blogs }) {
             <img src={post.image} alt={post.title} className={styles.image} />
             <div className={styles.titleText}>{post.title}</div>
             <p className={styles.excerpt}>{post.excerpt}</p>
-            <Link href={post.link} className={styles.cta}>
+            <Link href="/blog" className={styles.cta}>
               ادامه مطلب
             </Link>
           </div>

@@ -91,6 +91,6 @@
 
 @media (hover: hover) and (pointer: fine) {
   .cta:hover {
-    background-color: var(--color-secondary);
+    background-color: var(--color-hover);
   }
 }

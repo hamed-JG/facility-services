@@ -15,19 +15,17 @@
 }
 
 .section {
-  flex: 1 1 250px;
+  flex: 1 1 150px;
 }
 
 .logo {
-  width: 150px;
+  width: 100px;
   margin-bottom: 1rem;
 }
 
 .description {
   font-size: 0.9rem;
-  line-height: 1.6;
-  /* color: #ffffff; */
-}
+  }
 
 .title {
   font-size: 1.2rem;
