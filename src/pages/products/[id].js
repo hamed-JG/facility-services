@@ -86,8 +86,8 @@ export default function ProductDetails({ product, products }) {
 
       {/* Section 2: Full Description */}
       <section className={styles.descriptionSection}>
-        <h2 className={styles.sectionTitle}>توضیحات</h2>
         <div className={styles.descriptionBox}>
+        <h2 className={styles.sectionTitle}>توضیحات</h2>
           <p>{product.description.intro}</p>
           <ul>
             {product.specs.map((s, i) => (
