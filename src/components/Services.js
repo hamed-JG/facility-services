@@ -74,14 +74,7 @@ export default function Services() {
               >
                 درخواست خدمت
               </a>
-              <a
-                href={`https://wa.me/+989194883039?text=${encodeURIComponent(
-                  s.title
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.cta2}
-              >
+              <a href="tel:+989194883039" className={styles.cta2}>
                 <IoIosCall />
               </a>
             </div>

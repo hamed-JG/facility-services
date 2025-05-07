@@ -22,6 +22,15 @@ const Banner = () => {
 
   const slides = [
     {
+      title: "گروه صنعتی ژن اصفهان",
+      description:
+        "خنکی پایدار، آرامش مطمئن با دینام ژن اصفهان ",
+      imageDesktop: "/images/mainBanner.png",
+      imageMobile: "/images/boilerMobileBanner.png",
+      buttonText: "مشاهده محصولات",
+      link: "/products",
+    },
+    {
       title: "فروش آبگرمکن",
       description:
         "آبگرمکن‌های با کیفیت و قیمت مناسب، سفارش دهید و تجربه‌ای راحت داشته باشید",

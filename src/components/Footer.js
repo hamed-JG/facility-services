@@ -49,20 +49,9 @@ const Footer = () => {
         <div className={styles.section}>
           <h3 className={styles.title}>تماس با ما</h3>
           <p>تلفن: 09194883039</p>
-          <p>ایمیل: info@example.com</p>
+          <p>تلفن: 09194883039</p>
           <div className={styles.socials}>
-            <Link href="#">
-              <FaTelegram />
-            </Link>
-            <Link href="#">
-              <IoLogoWhatsapp
-                href="https://wa.me/+989194883039"
-                target="_blank"
-              />
-            </Link>
-            <Link href="#">
-              <FaSquareInstagram />
-            </Link>
+            آدرس: تهران میدان جمهوری خیابان دامپزشکی خیابان قصرالدشت پلاک 368 فروشگاه برتر
           </div>
         </div>
       </div>
